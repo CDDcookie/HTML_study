@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <!-- 스타일의 우선순위 결정(Cascading) !-->
+  <head>
+    <meta charset="UTF-8" />
+    <title>상품소개페이지</title>
+    <!--타입선택자 스타일 사용하기 !-->
+    <style>
+      /*타입선택자는 특정테그를 사용한 모든요소에 스타일을 적용*/
+      p {
+        color: black;
+      }
+      h1 {
+        color: aqua !important;
+      }
+      p {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <!--인라인 (2순위) vs 타입스타일(5순위)인데 안에 !important(1순위) 가있어서 
+      !important-아쿠아색 나옴-->
+    <h1 style="color: green">레드향</h1>
+
+    <!--인라인 (2순위) vs 타입스타일 2가지있음(5순위) 
+      라서 인라인-레드 출력-->
+    <p style="color: red">껍질에 붉은 빛이 돌아 레드향이라 불린다.</p>
+
+    <!--타입스타일 2가지(블랙,블루)시 마지막으로 작성된(블루)걸로 출력-->
+    <p>레드향은 한라봉과 귤을 교배한것으로 일반 귤보다 2~3배 크다</p>
+    <p>비타민c 와 비타민p 가 풍부하다</p>
+  </body>
+</html>
