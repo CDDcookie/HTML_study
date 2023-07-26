@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>박스 모델 크기 속성</title>
+    <style>
+      div {
+        border: 2px solid #000;
+        margin-bottom: 20px; /*박스 모델과 모델 사이의 여백*/
+      }
+      .box1 {
+        width: 400px; /*콘텐츠 영역의 크기*/
+        height: 100px; /*콘텐츠 영역의 크기*/
+      }
+      .box2 {
+        width: 50%; /*상대적인 값 . 기준은 부모이고 , 브라우저다*/
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+  </body>
+</html>

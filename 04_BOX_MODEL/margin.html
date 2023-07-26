@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 100px;
+        display: inline-block; /*이러면 가로로1열 없으면 세로로5게 줄줄이 나옴*/
+        border: 1px solid #222;
+      }
+      #margin1 {
+        /* 상하좌우 4방향으로 여백을준다 */
+        margin: 50px;
+      }
+      #margin2 {
+        /* 상하30 좌우50 으로 여백을준다 */
+        margin: 30px 50px;
+      }
+      #margin3 {
+        /* 상30 좌우20 하50 / 4방향으로 여백을준다 */
+        margin: 30px 20px 50px;
+      }
+      #margin4 {
+        /*상  우   하   좌*/
+        margin: 30px 50px 20px 50px;
+      }
+      #margin5 {
+        margin-right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="margin1"></div>
+    <div id="margin2"></div>
+    <div id="margin3"></div>
+    <div id="margin4"></div>
+    <div id="margin5"></div>
+  </body>
+</html>
