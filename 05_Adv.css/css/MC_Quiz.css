@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 1000px;
+  height: 500px;
+  margin: auto;
+
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 5px;
+}
+
+#container1 {
+  display: flex;
+}
+
+#container1 > ul {
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 5px;
+  background-color: gainsboro;
+}
+
+#container2 {
+  display: flex;
+  margin: 5px;
+}

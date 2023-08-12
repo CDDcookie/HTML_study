@@ -1,0 +1,24 @@
+/* 전체 선택자*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* id 선택자*/
+#contents {
+  background: url("../images/bg.jpg") no-repeat;
+  background-size: cover;
+  width: 800px;
+  height: 500px;
+  margin: 0 auto;
+  position: relative; /* 2.아래 absolute를 쓰기 위해서 붙임*/
+}
+
+/* 타입 선택자*/
+h1 {
+  color: white;
+  font-size: 120px;
+  position: absolute; /* 1.relative 를 적용한 상위 요소르 기준으로 위치 지정 (h1의 상위는 contents)*/
+  right: 100px;
+  bottom: 100px;
+}

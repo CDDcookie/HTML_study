@@ -1,0 +1,207 @@
+<!-- navi.html -->
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>속성 선택자</title>
+    <style>
+      .container {
+        width: 960;
+        margin: 0 auto;
+      }
+      .navi {
+        width: 960;
+        height: 60;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #ccc;
+      }
+      .navi ul {
+        list-style: none;
+        padding-top: 10px;
+        padding-bottom: 5px;
+      }
+      .navi ul li {
+        float: left;
+        width: 150px;
+        padding: 10px;
+      }
+      /* 가상 클래스 추가 */
+      /* 방문 또는 방문하지 않는 경우의 스타일 적용 */
+      .navi a:link,
+      a:visited {
+        color: #000;
+        text-decoration: none;
+      }
+      /* 마우스 포인트를 오렸을 때, 초점이 맞추어졌을 때 : 배경색을 검정색으로  */
+      .navi a:hover,
+      .navi a:focus {
+        background-color: #222;
+        color: #fff;
+      }
+      /* 메뉴를 선택한 경우 : 배경색을 붉은색으로 */
+      .navi a:active {
+        background-color: red;
+      }
+      .contents {
+        margin: 30px auto;
+        width: 400px;
+        padding: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+      }
+      /* 요소 상태에 따른 가상 클래스 추가 */
+      /* 앵커 대상에 스타일을 적용 */
+      #intro:target {
+        background-color: blue;
+        color: white;
+      }
+      #room:target {
+        background-color: greenyellow;
+      }
+      #reservation:target {
+        background-color: goldenrod;
+      }
+
+      /* signup form 스타일 부분 */
+      #signup {
+        background: #fff;
+        border: 1px solid #222;
+        border-radius: 5px;
+        padding: 20px;
+        width: 400px;
+        margin: 30px auto;
+      }
+
+      #signup fieldset {
+        border: 1px solid #ccc;
+        margin-bottom: 30px;
+      }
+
+      #signup legend {
+        font-size: 16px;
+        font-weight: bold;
+        padding-left: 5px;
+        padding-bottom: 10px;
+      }
+
+      #signup ul li {
+        line-height: 30px;
+        list-style: none;
+        padding: 5px 10px;
+        margin-bottom: 2px;
+      }
+
+      #signup button {
+        /*헌제 signupㅂ from의 각 요소는 문서가 작성이 된 순서로 위에서 아래로 표기 되 거있고
+        form의 width인 400px내에서 표시가되도록 위에서 아래로 자리를 잡어서 화면에 표기되고있는 상태
+        
+        이상태에서 button을 자기만을 기준으로 정해서 중간위치로 배치하기 힘들어서
+        이럴땐 중앙배치를 어떻게하냐??--> display속성과 margin을 활용하면 된다
+        display 속성을 이용해서 block레벨로 정해주면
+        혼자서 한 줄을 차지하게끔 하여 , 위치 조정을 할수있게됨
+        
+        그리고 margin 속성을 이용하여 좌우여백을 자동 계산이 되도록하면
+        중앙 정렬이 된다*/
+        display: block;
+        margin: auto;
+        border: 1px solid #222;
+        border-radius: 20px;
+        padding-left: 7px 25px;
+      }
+
+      /* 가상클래스 및 가상요소 등을 적용 */
+      /*개인정보에 input 이름,연락처 를 스타일을 적용해서 배열을 하고싶은데
+    fieldset 첫번쨰것만 골라야됨
+        #signup fieldset:first-of-type label
+        ㄴ>은 signup form의 fieldset요소 중에서 첫 번째 요소를 선택해서 스타일 적용
+    */
+      #signup fieldset:first-of-type label {
+        float: left;
+        font-size: 13px;
+        width: 60px;
+      }
+
+      /*개인정보에서 이름입력항목에 마우스가 올라가면 이름 항목이 선택되게끔 해야함
+      이름 연락처 항목에 마우스가 올라가면 연락처 입력항목이 선택되게끔 해야함*/
+      /*#signup fieldset:nth-of-type(1) input:hover {
+        ㄴ>signup form에서 첫번째! fieldset에서 input요소!에 hover(마우스올리면 위치선택)적용*/
+      /* #signup fieldset:nth-of-type(1) input:hover {
+        border-color: red;
+      } ㄴ이게 1번방법 아래가 2번방법 */
+      #signup input:not([type="raido"]):hover {
+        border-color: red;
+      } /*ㄴ> signup form에서 input type이 radio가 아닌! input type에 hover적용한것*/
+
+      /*radio 선택해서 체크를 하게 되면 , 선택된 요소를 표시해주고싶은경우
+             <li>
+              <label for="basic">기본형(최대 2인)</label>
+              <input type="radio" name="room" id="basic" />
+            </li>
+        input을 선택시 label에 스타일을 적용하게 만들어야된다 
+        ->1.input이 어떤상태(체크 여부)인지를 확인해야되고
+            ㄴ>'요소 상태 가상 클레스 사용' -> (input:checked)
+        ->2.input에 인접한 형제요소(label)를 선택하게끔 만들어야됨
+            ㄴ>'인접 형제 선택자 사용. -> (+label)
+         [이건 1번 방법]*/
+      /* #singup input:checked + label {
+        color: red;
+        font-weight: bold;
+      } */
+
+      /*UI를 작성시 ,label을 먼저 작성하고 , input을 작성하게 되면
+        스타일이 적용되지 않게 됨. input을 기준으로 인접 형제요소가 없기 때문이다
+        근데 현제는 화면의 요소가 간단하게 구성이 되어 있어서 선택이 되는거지 
+        복잡해지면 요소선택을 어떻게 하면 될까?? 
+        ㄴ>        #signup fieldset:first-of-type label 에서 쓴 방법으로 하면 된다
+
+        [이건 2번 방법]*/
+      #signup fieldset:nth-of-type(2) input:checked + label {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navi">
+        <ul>
+          <li><a href="ps1.html#intro">이용 안내</a></li>
+          <li><a href="ps1.html#room">객실 소개</a></li>
+          <li><a href="ps1.html#reservation">예약 방법 및 요금</a></li>
+          <li><a href="ps2.html">예약하기</a></li>
+        </ul>
+      </nav>
+
+      <form id="signup">
+        <fieldset>
+          <legend>개인정보</legend>
+          <ul>
+            <li>
+              <label for="fullname">이름</label>
+              <input id="fullname" name="fullname" type="text" required />
+            </li>
+            <li>
+              <label for="tel">연락처</label>
+              <input id="tel" name="tel" type="tel" />
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>객실 형태</legend>
+          <ul>
+            <li>
+              <label for="basic">기본형(최대 2인)</label>
+              <input type="radio" name="room" id="basic" />
+            </li>
+            <li>
+              <label for="family">가족형(최대 8인)</label>
+              <input type="radio" name="room" id="family" />
+            </li>
+          </ul>
+        </fieldset>
+        <button type="submit">저장</button>
+      </form>
+    </div>
+  </body>
+</html>

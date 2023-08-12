@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>가상 클레스</title>
+    <style>
+      /*홀수만 체크해서 만들기-> 구조가상 클레스 이용*/
+      #container {
+        text-align: center;
+        color: #2b2b2b;
+      }
+      table,
+      td,
+      th {
+        border: 1px solid #ccc;
+      }
+
+      table {
+        width: 200px;
+        margin: 0 auto;
+        border-collapse: collapse;
+      }
+      td {
+        text-align: left;
+        padding: 10px;
+        padding-left: 20px;
+      }
+      /*구조가상 클레스추가*/
+      /*table에서 행을 선택시 행 요소 중에서 2n+1번째의 요소를 선택*/
+      table tr:nth-of-type(2n + 1) {
+        /*nth-of-type(2n): 짝수행만*/
+        /*nth-of-type(2n + 1): 홀수행만*/
+        background: gray;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1></h1>
+      <table>
+        <tr>
+          <td>HTML</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+        </tr>
+        <tr>
+          <td>Javascript</td>
+        </tr>
+        <tr>
+          <td>React</td>
+        </tr>
+        <tr>
+          <td>Node.js</td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

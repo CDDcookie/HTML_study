@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>속성 선택자</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        width: 120px;
+        display: inline-block;
+        margin: 10px;
+      }
+      /*연결 선택자*/
+      li a {
+        padding: 5px 20px;
+        font-size: 14px;
+        text-decoration: none;
+      }
+      /*속성 선택자*/
+      /*a테그중에서 속성이 class인 것 중에서 값이 button인 태그를 선택*/
+      a[class~="button"] {
+        border-radius: 5px;
+        border: 1px solid #222;
+      }
+    </style>
+  </head>
+  <!--여러값 중에서 특정 속성값이 포함된 속성 요소를 선택하는 선택자-->
+  <body>
+    <ul>
+      <li><a href="" class="flat">메뉴1</a></li>
+      <li><a href="" class="flat">메뉴2</a></li>
+      <li><a href="" class="button">메뉴3</a></li>
+      <li><a href="" class="flat_button">메뉴4</a></li>
+    </ul>
+  </body>
+</html>

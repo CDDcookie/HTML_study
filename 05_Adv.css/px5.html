@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      /*구조 가상 클레스 추가*/
+      /*contents 에서 3번째 요소를 선택*/
+      .contents :nth-child(3) {
+        background-color: yellow;
+      }
+
+      /*contents 에서 3번째 p요소를 선택*/
+      .contents p:nth-of-type(3) {
+        background-color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contents">
+      <h2>첫번째 h2</h2>
+      <p>첫번쨰 p</p>
+      <p>두번째 p</p>
+      <h2>두번째 h2</h2>
+      <p>세번째 p</p>
+      <h2>세번째 h2</h2>
+      <p>마지막 p</p>
+    </div>
+  </body>
+</html>

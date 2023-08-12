@@ -1,0 +1,82 @@
+/* 전체 선택자 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 타입 선택자 */
+body {
+  background: #ccc;
+  padding: 20px;
+}
+
+/* id 선택자 - form 에 css 적용 */
+#signup {
+  background: #fff;
+  border: 1px solid #222;
+  border-radius: 5px;
+  padding: 20px;
+  width: 400px;
+  margin: 30px auto;
+}
+
+/* 연결 선택자 */
+#signup fieldset {
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+}
+
+#signup legend {
+  font-size: 16px;
+  font-weight: bold;
+  padding-left: 5px;
+  padding-bottom: 5px;
+}
+
+#signup ul li {
+  line-height: 30px; /* 행간 간격 지정 */
+  list-style: none; /* 리스트의 점 제거 */
+  padding: 5px 10px;
+  margin-bottom: 2px;
+}
+
+#signup button {
+  border: 1px solid #222;
+  border-radius: 20px;
+  display: block;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: auto;
+  padding: 7px 25px;
+}
+
+/* 입력 항목의 정렬 */
+#signup label {
+  /* 현재는 html문서 순서대로 위치 지정 => 배치로 위치 지정 */
+  float: left;
+  font-size: 13px;
+  width: 150px;
+}
+
+/* 특정 속성( required )이 있는 요소를 선택하는 속성 선택자 */
+#signup input[required] {
+  border: 1px red solid;
+}
+
+/* 특정 속성( readonly )이 있는 요소를 선택하는 속성 선택자 */
+#signup input[readonly] {
+  border: none;
+}
+
+/* 아이디, 비밀번호, 비밀번호 확인, 이름, 메일주소 입력 항목 크기 지정  */
+/* 특정 속성값이 있는 요소를 선택하는 속성 선택자 */
+#signup input[type="text"],
+#signup input[type="password"],
+#signup input[type="tel"],
+#singup input[type="email"] {
+  border: 1px solde #ccc;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 5px;
+  width: 200px;
+}
